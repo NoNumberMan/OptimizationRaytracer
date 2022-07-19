@@ -9,7 +9,7 @@ namespace raytracer {
 	void add_mesh( const float* vertices, const size_t size ) {
 		const int start = _vertices.size();
 		_vertices.resize(start + size);
-		memcpy(_vertices.data() + start, vertices, size);
+		memcpy(_vertices.data() + start, vertices, size * sizeof(float));
 		_meshes.push_back(start);
 	}
 
