@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <algorithm>
 #include <cassert>
 #include <cmath>
@@ -11,10 +11,10 @@ namespace raytracer {
 
 	template<typename Scalar, int D>
 	struct vec {
-		private:
+	private:
 		Scalar _elements[D] = {};
 
-		public:
+	public:
 		vec();
 		explicit vec(const Scalar& v0);
 		vec(const Scalar& v0, const Scalar& v1);

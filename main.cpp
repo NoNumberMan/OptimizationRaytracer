@@ -55,6 +55,14 @@ int main() {
 	data.pixels = (byte*) calloc(WIDTH_INIT * HEIGHT_INIT * 4, 1);
 	glfwSetWindowUserPointer(window, &data);
 
+	constexpr float triangle[9]{
+		-1.0f, -1.0f, -1.0f,
+		+1.0f, -1.0f, -3.0f,
+		+0.0f, +1.0f, -2.0f
+	};
+
+	raytracer::add_mesh(triangle, 9);
+
 	while (!glfwWindowShouldClose(window)) {
 		raytracer::scoped_timer t([](const int dt) { printf("frame took %d ms - %d fps\n", dt, 1000 / dt); });
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
